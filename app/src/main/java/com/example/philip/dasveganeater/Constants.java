@@ -8,4 +8,6 @@ public final class Constants {
 
     public static final int NO_IMAGE_PROVIDED = -1;
 
+    public static final String FOOD = "com.example.philip.dasveganeater.Food";
+
 }

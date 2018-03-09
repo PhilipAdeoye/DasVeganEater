@@ -1,10 +1,12 @@
 package com.example.philip.dasveganeater;
 
+import java.io.Serializable;
+
 /**
  * Created by Philip-Mac on 3/4/18.
  */
 
-public class Food {
+public class Food implements Serializable {
 
     public Food() {
     }

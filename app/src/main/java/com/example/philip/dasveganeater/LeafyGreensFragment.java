@@ -1,11 +1,13 @@
 package com.example.philip.dasveganeater;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -35,6 +37,18 @@ public class LeafyGreensFragment extends Fragment {
 
         ListView listView = rootView.findViewById(R.id.food_list);
         listView.setAdapter(foodArrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Food food = foods.get(position);
+
+                Intent intent = new Intent(getActivity(), FoodDetailActivity.class);
+                intent.putExtra(Constants.FOOD, food);
+
+                startActivity(intent);
+            }
+        });
 
         return rootView;
     }
